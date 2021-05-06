@@ -22,6 +22,7 @@ public class ProductDao {
 		return redisTemplate.opsForHash().values("Product");
 	}
 	public Product findById(int id) {
+		System.out.println("getting data from database..."  +id );
 		return (Product) redisTemplate.opsForHash().get("Product", id);
 	}
 	public String deleteProduct(int id) {
